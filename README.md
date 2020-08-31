@@ -11,17 +11,22 @@ Navigate to example-process-service and run `mvn spring-boot:run`
 Use Postman to start process with some process vars:
 
 POST
-```http://localhost:8090/rest/server/containers/example-process-kjar-1_0-SNAPSHOT/processes/SampleProcess/instances```
+```
+http://localhost:8090/rest/server/containers/example-process-kjar-1_0-SNAPSHOT/processes/SampleProcess/instances
+```
 
 Body:
-```{
+```
+{
     "SomeParam": "process parameter a",
     "SomeOtherParam": "process parameter b"
-}```
+}
+```
 
 Should see some logs such as
 
-```2020-08-31 15:58:54.972  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : process vars: key SomeParam,value MY GREAT NEW PARAM
+```
+2020-08-31 15:58:54.972  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : process vars: key SomeParam,value MY GREAT NEW PARAM
 2020-08-31 15:58:54.972  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : process vars: key initiator,value anonymousUser
 2020-08-31 15:58:54.972  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : process vars: key SomeOtherParam,value process parameter b
 2020-08-31 15:58:54.975  INFO 6397 --- [0.0-8090-exec-1] com.redhat.MyWorkItemHandler             : Starting executeWorkItem for Process Instance ID 1
