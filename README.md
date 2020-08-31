@@ -34,11 +34,12 @@ Should see some logs such as
 2020-08-31 15:58:54.976  INFO 6397 --- [0.0-8090-exec-1] com.redhat.MyWorkItemHandler             : sampleParamTwo: process parameter b
 ...................
 
-..........
+2020-08-31 17:36:53.406  INFO 11954 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : Message to be sent: {SomeParam=MY GREAT NEW PARAM, initiator=anonymousUser, PROCESS_INSTANCE_ID=1, CORRELATION_KEY=1, SomeOtherParam=process parameter b, PROCESS_ID=SampleProcess}
 
-2020-08-31 15:58:54.981  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : ActionNodeInstance process vars: key workitemResult,value [Changed by an Event Listener! This is the first result , process parameter b This is the second result ]
-2020-08-31 15:58:54.981  INFO 6397 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : ActionNodeInstance process vars: key SomeOtherParam,value process parameter b
-workitemResult1: Changed by an Event Listener! This is the first result
+..........
+2020-08-31 17:36:53.676  INFO 11954 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : ActionNodeInstance process vars: key workitemResult,value [New Value Changed by an Event Listener! This is the first result , process parameter b This is the second result ]
+2020-08-31 17:36:53.676  INFO 11954 --- [0.0-8090-exec-1] MyProcessEventListener Audit             : ActionNodeInstance process vars: key SomeOtherParam,value process parameter b
+workitemResult1: New Value Changed by an Event Listener! This is the first result
 workitemResult2: process parameter b This is the second result
 Sample Process Finished
 ```
