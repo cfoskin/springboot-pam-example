@@ -1,0 +1,6 @@
+com/redhat/App.class
+com/redhat/configuration/KieServerDeployer$1.class
+com/redhat/configuration/KieServerDeployer.class
+com/redhat/model/KJAR.class
+com/redhat/configuration/DefaultWebSecurityConfig.class
+com/redhat/amq/config/ActiveMqConfig.class

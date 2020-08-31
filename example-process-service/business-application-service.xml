@@ -1,0 +1,36 @@
+<kie-server-state>
+  <controllers/>
+  <configuration>
+    <configItems>
+      <config-item>
+        <name>org.kie.server.controller</name>
+        <value></value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.id</name>
+        <value>business-application-service</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.location</name>
+        <value>http://localhost:8090/rest/server</value>
+        <type>java.lang.String</type>
+      </config-item>
+    </configItems>
+  </configuration>
+  <containers>
+    <container>
+      <containerId>example-process-kjar-1_0-SNAPSHOT</containerId>
+      <releaseId>
+        <groupId>com.redhat</groupId>
+        <artifactId>example-process-kjar</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </releaseId>
+      <status>FAILED</status>
+      <configItems/>
+      <messages/>
+      <containerAlias>kie-sboot-example-kjar</containerAlias>
+    </container>
+  </containers>
+</kie-server-state>
