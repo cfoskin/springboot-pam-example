@@ -84,15 +84,17 @@ public class MyProcessEventListener implements ProcessEventListener {
             try {
                 LOGGER.info("Sending JMSNotification to destination type='{}' name='{}'}", defaultDestinationType,
                         defaultDestinationName);
+                LOGGER.info("*****************");
+
                 jmsTemplate.convertAndSend(defaultDestinationName, createCustomMessage(processImpl));
             } catch (JMSException e) {
                 e.printStackTrace();
             }
 
-            processImpl.getVariables().forEach((k, v) -> {
-                processImpl.setVariable("SomeParam", "Changed by an Event Listener!");
-                LOGGER.info("process vars: key {},value {}", k, v);
-            });
+//            processImpl.getVariables().forEach((k, v) -> {
+//                processImpl.setVariable("SomeParam", "Changed by an Event Listener!");
+//                LOGGER.info("process vars: key {},value {}", k, v);
+//            });
         }
         if (node instanceof ActionNodeInstance) {
             LOGGER.info("Entering ActionNodeInstance node instance {}", node);
@@ -110,7 +112,12 @@ public class MyProcessEventListener implements ProcessEventListener {
         msg.put("PROCESS_ID", processImpl.getProcessId());
         msg.put("PROCESS_INSTANCE_ID", processImpl.getId());
         msg.put("CORRELATION_KEY", processImpl.getCorrelationKey());
-      
+        processImpl.getVariables().forEach((k, v) -> {
+            processImpl.setVariable("SomeParam", "New Value Changed by an Event Listener!");
+            msg.put(k, v);
+        });
+        LOGGER.info("Message to be sent: {}", msg);
+
 
         return msg;
     }

@@ -20,7 +20,6 @@ public class NamingDestinationResolver implements DestinationResolver {
     @Override
     public Destination resolveDestinationName(Session session, String destinationName, boolean pubsub)
             throws JMSException {
-        System.out.println("IN HERE *********** " + session.toString());
         if (this.destinationType.toLowerCase().equals(TOPIC)) {
 
             return session.createTopic(destinationName);
